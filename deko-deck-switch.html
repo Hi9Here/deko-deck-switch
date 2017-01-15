@@ -1,0 +1,66 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../paper-styles/color.html">
+<link rel="import" href="../paper-styles/typography.html">
+
+<!--
+`deko-deck-switch`
+Switch between Decks you follow and the ones you have created
+
+@demo demo/index.html 
+-->
+
+<dom-module id="deko-deck-switch">
+  <template>
+    <style is="custom-style">
+      :host {
+        display: block;
+      }
+      .button-container {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
+      }
+      paper-icon-button {
+        @apply(--paper-font-subhead);
+        color: var(--paper-red-500);
+        border-radius: 3px;
+        margin: 5px;
+        width: 75px;
+        height: 75px;
+        color: 333333;
+      }
+     paper-icon-button:hover {
+       color: var(--paper-red-600);
+     }
+      paper-icon-button[active] {
+        background-color: var(--paper-red-500);
+        color: #fff;
+      }
+    </style>
+
+    <div class="button-container">
+      <paper-icon-button icon="favorite" toggles raised></paper-icon-button>
+      <paper-icon-button icon="account-circle" toggles raised active></paper-icon-button>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'deko-deck-switch',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'deko-deck-switch',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
